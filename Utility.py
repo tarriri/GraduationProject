@@ -1,6 +1,7 @@
 from memento_client import MementoClient
 import requests
 from urllib.parse import urlparse
+import json
 
 
 class Newspaper:
@@ -52,3 +53,6 @@ class Utility:
     def get_fixed_domain(self, uri):
         parsed_uri = urlparse(uri)
         return '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
+
+    def create_json_data(self, text, url):
+        return {"url": url, "text": text}

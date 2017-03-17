@@ -23,8 +23,9 @@ class Scraper:
         self.remove_script_tag(soup)
         self.remove_style_tag(soup)
         news_div = soup.findAll(platform.newsdomelement, {"class": platform.newscssclass})
-        for item in news_div:
-            result += " " + item.get_text()
+        if news_div is not None:
+            for item in news_div:
+                result += " " + item.get_text()
         return result
 
     def get_anchor_list_for_domain(self, content, fixed_domain, newspaper_domain):
