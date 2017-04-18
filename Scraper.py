@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 from Utility import Content
-import NewsAnalysisDAL as Provider
+import NewsAnalysisDatabase as db
 
 
 class Scraper:
@@ -29,7 +29,7 @@ class Scraper:
         return result
 
     def get_anchor_list_for_domain(self, content, fixed_domain, newspaper_domain):
-        platform = Provider.get_platform_by_domain(newspaper_domain)
+        platform = db.get_platform_by_domain(newspaper_domain)
         if platform is None:
             return None
         result = set()

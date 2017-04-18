@@ -1,7 +1,6 @@
 from memento_client import MementoClient
 import requests
 from urllib.parse import urlparse
-import json
 
 
 class Newspaper:
