@@ -14,37 +14,8 @@ newspaper_list_db = Provider.get_platform_list()
 
 
 def main():
-    # collect_url()
+    collect_url()
     collect_articles()
-    # time_range = [start_date + datetime.timedelta(days=x) for x in range(0, (end_date - start_date).days)]
-    # content_uri = set()
-    # for item in newspaper_list_db:
-    #     uri_range = set()
-    #     # For given date range, calls get_uri_of_date method.
-    #     for date in time_range:
-    #         uri_range.add(utility.get_uri_of_date(date, item.urldomain))
-    #         uri_range.add(utility.get_uri_of_date(date, item.urldomain + item.commentaryurl))
-    #     # Gets all uri's of web site via home page, using get_anchor_list_for_domain method
-    #     for home_uri in uri_range:
-    #         if home_uri is not None:
-    #             r_get_homepage = requests.get(home_uri)
-    #             if r_get_homepage.status_code == 200:
-    #                 content_uri.update(scraper.get_anchor_list_for_domain(r_get_homepage.content, utility.get_fixed_domain(home_uri), item.urldomain))
-    #                 print(str(content_uri.__len__()) + " URL extracted")
-    # for content in content_uri:
-    #     # Gets news text for a given specific url: makes get request, removes unnecessary text from response.
-    #     try:
-    #         r_get = requests.get(content.content_uri)
-    #     except RemoteDisconnected as e:
-    #         print(e.line)
-    #         continue
-    #     if r_get.status_code == 200:
-    #         scraped_news = scraper.get_news_text(r_get.content, content.platform)
-    #         if scraped_news and scraped_news.strip():
-    #             Provider.create_collected_news(scraped_news, content.content_uri)
-    #             print("article added")
-    #         else:
-    #             print("Nothing found on: " + content.content_uri)
 
 
 def collect_url():
